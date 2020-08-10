@@ -1,6 +1,7 @@
 import os, sys, re, getopt
 import traceback
 from tweet_scrapper import GetOldTweets3 as got
+import pandas as pd
 
 
 def main(username,since,until,maxtweets):
@@ -155,7 +156,6 @@ def main(username,since,until,maxtweets):
             print("Cleaning Tweets...")
 
             #Cleaning the data
-            import pandas as pd
             data_1 = pd.read_csv(value) 
             #Check the tweet content
             data_1.fillna("",inplace=True)
