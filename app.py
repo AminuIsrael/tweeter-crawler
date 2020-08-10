@@ -4,6 +4,7 @@ import pickle
 import numpy as np
 import pandas as pd
 from flask import Flask, request
+from flask_cors import CORS
 from sklearn.feature_extraction.text import HashingVectorizer
 import warnings
 warnings.filterwarnings('ignore')
@@ -11,6 +12,7 @@ from CustomCode import data_preprocessing
 from tweet_scrapper import getoldtweets3
 
 flask_app = Flask(__name__)
+CORS(flask_app)
 
 @flask_app.route('/', methods=['GET'])
 def index_page():
