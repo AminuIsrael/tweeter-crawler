@@ -1,4 +1,5 @@
 import re
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 
 
